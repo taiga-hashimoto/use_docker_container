@@ -5,7 +5,7 @@ jobs:
   default-server:
     runs-on: ubuntu-latest
     steps:
-      - neme: log node version
+      - name: log node version
         run: |
           hostname
           node -v #nodeバージョンの確認
