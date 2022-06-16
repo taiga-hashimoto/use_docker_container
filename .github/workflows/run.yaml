@@ -5,11 +5,11 @@ jobs:
   default-server:
     runs-on: ubuntu-latest
     steps:
-      run: |
-        hostname
-        node -v #nodeバージョンの確認
-        cat /etc/os-release #Linuxバージョンの確認
-
+      - neme: log node version
+        run: |
+          hostname
+          node -v #nodeバージョンの確認
+          cat /etc/os-release #Linuxバージョンの確認
   node-docker:
     runs-on: ubuntu-latest
     container: #起動するコンテナイメージを指定
