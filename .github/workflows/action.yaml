@@ -1,22 +1,16 @@
-name: Container
-on: push
-
-jobs:
-  default-server:
-    runs-on: ubuntu-latest
-    steps:
-      - name: log node version
-        run: |
-          hostname
-          node -v #nodeバージョンの確認
-          cat /etc/os-release #Linuxバージョンの確認
-  node-docker:
-    runs-on: ubuntu-latest
-    container: #起動するコンテナイメージを指定
-      image: node:13.5.0-alpine3.10 #指定のdockerイメージを使用
-    steps: #dockerコンテナ内でステップを実行
-      - name: Log node version
-        run: |
-          hostname
-          node -v #nodeバージョンの確認
-          cat /etc/os-release #Linuxバージョンの確認
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  who-to-greet:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
