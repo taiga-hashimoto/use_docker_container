@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: taiga-hashimoto/use_docker_container@v1
+        uses: taiga-hashimoto/use_docker_container@v1.0
         with:
           who-to-greet: 'Mona the Octocat'
       # `hello` ステップからの出力を使用する
