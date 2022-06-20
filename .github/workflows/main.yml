@@ -8,8 +8,6 @@ jobs:
       - name: Hello world action step
         id: hello
         uses: taiga-hashimoto/use_docker_container@v1.0
-        with:
-          who-to-greet: 'WashiJayo'
       # `hello` ステップからの出力を使用する
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
